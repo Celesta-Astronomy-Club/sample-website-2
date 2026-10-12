@@ -26,6 +26,7 @@ const SITE = {
     ] },
     { id: "events",  label: "Events",  href: "events.html" },
     { id: "blog",    label: "Blog",    href: "blog.html" },
+    { id: "magazine", label: "Magazine", href: "magazine.html" },
     { id: "contact", label: "Contact", href: "contact.html" },
   ],
 
