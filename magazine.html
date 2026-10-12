@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <title>Magazine | Celesta</title>
+  <meta name="description" content="Celesta's magazine, released volume by volume. Volume 1 is themed on new frontiers.">
+  <meta name="theme-color" content="#03060d">
+
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+  <!-- Link previews: see the note about the full image address in index.html -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Celesta">
+  <meta property="og:title" content="Magazine | Celesta">
+  <meta property="og:description" content="Celesta's magazine, released volume by volume. Volume 1 is themed on new frontiers.">
+  <meta property="og:image" content="assets/img/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/site.js" defer></script>
+</head>
+
+<body data-page="magazine">
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- Navigation. Built by assets/js/site.js. -->
+  <header data-layout="header"></header>
+
+  <main id="main">
+
+    <!-- ===== PAGE HEADER ================================================ -->
+    <section class="page-head">
+      <!-- Orbit lines, decorative only -->
+      <svg class="orbits" viewBox="-1100 -520 2200 1040" width="2200" height="1040" aria-hidden="true" focusable="false">
+        <defs>
+          <radialGradient id="orbit-fade" cx="0" cy="0" r="1000" gradientUnits="userSpaceOnUse">
+            <stop offset="0.28" stop-color="#e6e0d1" stop-opacity=".27"/>
+            <stop offset="1" stop-color="#e6e0d1" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <g transform="rotate(-14)">
+          <ellipse rx="420" ry="132" pathLength="1"/>
+          <ellipse rx="640" ry="200" pathLength="1"/>
+          <ellipse rx="900" ry="282" pathLength="1"/>
+          <circle r="3" fill="#e6e0d1">
+            <animateMotion dur="120s" begin="-55s" repeatCount="indefinite" path="M640 0 A640 200 0 1 1 -640 0 A640 200 0 1 1 640 0"/>
+          </circle>
+        </g>
+      </svg>
+
+      <div class="wrap">
+        <h1>Magazine</h1>
+        <p class="lead">Celesta's magazine, released volume by volume.</p>
+      </div>
+    </section>
+
+
+    <!-- ===== VOLUMES ==================================================== -->
+    <!-- Volume 1 is live. Volumes 2 and 3 are placeholders marked "To be released".
+         Picture: put <img src="assets/img/magazine/your-image.jpg" alt="..."> inside a .media box
+         and delete aria-hidden="true" on that box.
+
+         To release Volume 2: copy the whole Volume 1 <article> below, paste it over the Volume 2 one,
+         then change the title, the theme line, the description and the link (the href on the title). -->
+    <section class="listing listing--last">
+      <div class="wrap">
+
+        <div class="card-grid card-grid--3">
+
+          <!-- Volume 1: live. Clicking anywhere on the card opens the link on the title. -->
+          <article class="card glass spot" data-cursor-area>
+            <div class="media" aria-hidden="true"><!-- Picture goes here --></div>
+            <div class="card-text">
+              <h2 class="card-title"><a class="card-link" href="https://tinyurl.com/CelestaMagazineVol1" target="_blank" rel="noopener">Volume 1</a></h2>
+              <p class="card-kind">New frontiers</p>
+              <p class="card-blurb">This issue's theme is new frontiers, chosen mostly because 2026 refuses to slow down: private companies are launching people into orbit with the regularity of a commuter train, and entire nations are edging toward their first crewed missions. Every article here, one way or another, is about someone doing something for the first time and hoping gravity doesn't notice.</p>
+            </div>
+            <span class="card-cta">Read Volume 1 <svg viewBox="0 0 8 14" fill="none" aria-hidden="true"><path d="M1 1l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </article>
+
+          <!-- Volume 2: to be released -->
+          <article class="card glass">
+            <div class="media" aria-hidden="true"><!-- Picture goes here --></div>
+            <div class="card-text">
+              <h2 class="card-title">Volume 2</h2>
+            </div>
+            <span class="card-cta">To be released</span>
+          </article>
+
+          <!-- Volume 3: to be released -->
+          <article class="card glass">
+            <div class="media" aria-hidden="true"><!-- Picture goes here --></div>
+            <div class="card-text">
+              <h2 class="card-title">Volume 3</h2>
+            </div>
+            <span class="card-cta">To be released</span>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer. Built by assets/js/site.js. -->
+  <footer data-layout="footer"></footer>
+</body>
+</html>
