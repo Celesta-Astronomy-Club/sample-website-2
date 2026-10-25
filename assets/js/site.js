@@ -23,6 +23,8 @@ const SITE = {
     { id: "about", label: "About", href: "about.html", children: [
       { id: "about",   label: "About us", href: "about.html" },
       { id: "members", label: "Members",  href: "members.html" },
+      // lock: shows a small padlock. footer: false keeps it out of the footer list.
+      { id: "constitution", label: "Constitution", href: "constitution.html", lock: true, footer: false },
     ] },
     { id: "events",  label: "Events",  href: "events.html" },
     { id: "blog",    label: "Blog",    href: "blog.html" },
@@ -45,6 +47,17 @@ const SITE = {
     email:      "celestaclub@gmail.com",                             // address only, no mailto:
   },
 
+  // Club IDs that open the Constitution page. One per line, in quotes, with a comma after each.
+  // To add someone, add a line. To remove someone, delete their line.
+  // Capital letters do not matter when a member types their ID.
+  // Note: this keeps casual visitors out. It is not real security, because anyone who views the
+  // page source can see this list. Do not put anything sensitive on the Constitution page.
+  clubIds: [
+    "AradhyaHaldikar123",
+    "MrunalSayam456",
+    "ArnavVenkatesh789",
+  ],
+
   // Numbers used in the page text. Change them here and every page updates.
   discord: { members: "88", asOf: "August 2026" },
 
@@ -58,6 +71,8 @@ const SITE = {
 const ICON_CHEVRON = '<svg viewBox="0 0 8 14" fill="none" aria-hidden="true"><path d="M1 1l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 const ICON_DOWN = '<svg viewBox="0 0 9 6" fill="none" aria-hidden="true"><path d="M1 1l3.5 3.5L8 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
+const ICON_LOCK = '<svg class="lock-icon" viewBox="0 0 11 13" fill="none" aria-hidden="true"><rect x="1" y="5.5" width="9" height="7" rx="2" fill="currentColor"/><path d="M3 5.5V4a2.5 2.5 0 0 1 5 0v1.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg><span class="sr-only"> (members only)</span>';
+
 // Every page in one flat list (dropdown children included). Used by the phone menu and the footer.
 const flatNav = () => SITE.nav.flatMap((n) => (n.children ? n.children : [n]));
 
@@ -65,7 +80,7 @@ function renderHeader() {
   const host = document.querySelector('[data-layout="header"]');
   if (!host) return;
   const page = document.body.dataset.page;
-  const link = (n) => `<a href="${n.href}"${n.id === page ? ' aria-current="page"' : ""}>${n.label}</a>`;
+  const link = (n) => `<a href="${n.href}"${n.id === page ? ' aria-current="page"' : ""}>${n.label}${n.lock ? ICON_LOCK : ""}</a>`;
 
   const desktopItem = (n) => {
     if (!n.children) return `<li>${link(n)}</li>`;
@@ -112,7 +127,7 @@ function renderFooter() {
       </div>
       <nav aria-label="Pages">
         <h2>Pages</h2>
-        <ul>${flatNav().map((n) => `<li><a href="${n.href}">${n.label}</a></li>`).join("")}</ul>
+        <ul>${flatNav().filter((n) => n.footer !== false).map((n) => `<li><a href="${n.href}">${n.label}</a></li>`).join("")}</ul>
       </nav>
       <nav aria-label="Community">
         <h2>Community</h2>
